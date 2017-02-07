@@ -34,7 +34,7 @@ public class Solution {
         }
     }
 
-    public static void main(String[] args)throws IOException {
+    public static void main(String[] args) throws IOException {
         writeZipEntriesToFile("c:\\1.zip", "c:\\data.txt");
     }
 }
