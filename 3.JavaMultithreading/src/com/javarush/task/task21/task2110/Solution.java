@@ -30,7 +30,6 @@ public class Solution {
                 // Get the entry name and write it to the output file
                 String zipEntryName = ((ZipEntry) entries.nextElement()).getName() + newLine;
                 writer.write(zipEntryName, 0, zipEntryName.length());
-
             }
         }
     }
