@@ -1,0 +1,10 @@
+<div class="wdghtml" taskKey="com.javarush.task.task21.task2113.big01">
+<h3>Ипподром(1)</h3>
+<p>Сегодня мы напишем небольшую игру под названием &#171;<em><strong>Ипподром</strong></em>&#171;.<br />
+Когда я говорю мы &#8212; я имею ввиду тебя. Я же буду работать наставником.</p>
+<p>Для начала нам понадобятся классы &#171;<em><strong>ипподром</strong></em>&#187; и &#171;<em><strong>лошадь</strong></em>&#171;.<br />
+Создай классы <span class="text-corporate"><strong>Hippodrome</strong></span> (<em><strong>ипподром</strong></em>), <strong><span class="text-corporate">Horse</span></strong> (<strong>лошадь</strong>).</p>
+<p>Также не забудь, что любая программа начинается с метода main.<br />
+Добавь его в класс <span class="text-corporate"><strong>Hippodrome</strong></span>.</p>
+
+</div>
