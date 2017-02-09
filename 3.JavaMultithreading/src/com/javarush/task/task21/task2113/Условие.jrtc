@@ -1,4 +1,35 @@
-<div class="wdghtml" taskKey="com.javarush.task.task21.task2113.big13">
+<div class="wdghtml" taskKey="com.javarush.task.task21.task2113.big16">
+<h3>Ипподром(16)</h3>
+<p>Теперь уже точно все.</p>
+<p>Добавь вызов метода printWinner в конец метода main.</p>
+<p>Запускай и любуйся своей первой компьютерной игрой :)</p>
+
+<hr>
+<h3>Ипподром(15)</h3>
+<p>Добавим определение победителя.<br />
+В классе <span class="text-corporate"><strong>Hippodrome</strong></span> сделаем два метода:<br />
+<mark>public Horse getWinner()</mark> и <mark>public void printWinner()</mark></p>
+<p>Метод <mark>getWinner</mark> должен возвращать лошадь пробежавшую самую большую дистанцию.<br />
+Метод <mark>printWinner</mark> выводит на экран имя победителя в виде: <em><strong>Winner is </strong></em><strong><span class="text-user">&lt;name&gt;</span></strong><em><strong>!</strong></em></p>
+<p><strong>Пример:</strong><br />
+<code>Winner is Lucky!</code></p>
+
+<hr>
+<h3>Ипподром(14)</h3>
+<p>Запускаем и любуемся.<br />
+У нас каждые полсекунды отображается <strong>новый кадр</strong> с ситуацией на ипподроме.<br />
+Мышкой уменьши размер консоли так, чтобы был виден только один &#171;<em><strong>кадр</strong></em>&#187; и на том же самом месте.</p>
+<p><strong>Тогда можно наблюдать забег в живую и даже покомментировать:</strong><br />
+<em>&#8212; Старт.</em><br />
+<em> &#8212; Гомер неожиданно обходит Лаки.</em><br />
+<em> &#8212; Слевин вырывается вперед.</em><br />
+<em> &#8212; Вперед Лаки!</em><br />
+<em> &#8212; 10 баксов на Слевина.</em><br />
+<em> &#8212; Похоже Лаки сбросил жокея и расслабился.</em><br />
+<em> &#8212; Гомер уверенно вырывается вперед.</em><br />
+<em> &#8212; Неожиданно для всех побеждает Гомер. Вот это номер!</em></p>
+
+<hr>
 <h3>Ипподром(13)</h3>
 <p>Теперь вернемся к методу <mark>print</mark> класса <span class="text-corporate"><strong>Horse</strong></span>.</p>
 <p>Т.к. мы работаем с консолью, то все лошади на бегах будут выглядеть примерно так:<br />
