@@ -36,7 +36,7 @@ public class Solution {
             new TooShortStringFirstThreadException();
         }else if(Solution.SECOND_THREAD_NAME.equals(threadName))   {
             new TooShortStringSecondThreadException();
-        } else throw new  RuntimeException();
+        } else new TooShortStringSecondThreadException();
 
         return string.substring(string.indexOf('\t'), string.lastIndexOf('\t'));
     }
