@@ -20,10 +20,9 @@ public class Solution {
             while (readFile.ready())
                 sb.append(readFile.readLine() + " ");
 
-            String[] str = sb.toString().split("\\s+");
-            Arrays.sort(str);
+            String[] words = sb.toString().split("\\s+");
 
-            StringBuilder result = getLine(str);
+            StringBuilder result = getLine(words);
             System.out.println(result.toString());
         }
     }
@@ -31,22 +30,33 @@ public class Solution {
     public static StringBuilder getLine(String... words) {
         StringBuilder sb = new StringBuilder();
         String lastSymbol = "";
+        String[] tmpWords;
 
         if (words.length > 0 && !words[0].equals("")) {
-            for (int i = 0; i < words.length; i++) {
+            tmpWords = words;
+            Arrays.sort(tmpWords);
+
+            for (int m = 0; m < tmpWords.length; m++) {
+                for (int n = 0; n < tmpWords.length; n++) {
+                    if (tmpWords[m].equals(tmpWords[n]) && m != n)
+                        tmpWords[n] = "";
+                }
+            }
+
+            for (int i = 0; i < tmpWords.length; i++) {
 
                 if (sb.length() == 0) {
-                    sb.append(words[i]);
-                    lastSymbol = String.valueOf(words[i].charAt(words[i].length() - 1)).toUpperCase();
-                    words[i] = "";
+                    sb.append(tmpWords[i]);
+                    lastSymbol = String.valueOf(tmpWords[i].charAt(tmpWords[i].length() - 1)).toUpperCase();
+                    tmpWords[i] = "";
                 }
 
-                for (int j = 0; j < words.length; j++) {
+                for (int j = 0; j < tmpWords.length; j++) {
 
-                    if (i != j && words[j].toUpperCase().startsWith(lastSymbol)) {
-                        sb.append(" " + words[j]);
-                        lastSymbol = String.valueOf(words[j].charAt(words[j].length() - 1)).toUpperCase();
-                        words[j] = "";
+                    if (i != j && tmpWords[j].toUpperCase().startsWith(lastSymbol)) {
+                        sb.append(" " + tmpWords[j]);
+                        lastSymbol = String.valueOf(tmpWords[j].charAt(tmpWords[j].length() - 1)).toUpperCase();
+                        tmpWords[j] = "";
                     }
                 }
             }
