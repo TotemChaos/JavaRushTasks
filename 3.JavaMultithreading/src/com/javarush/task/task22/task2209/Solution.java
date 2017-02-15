@@ -33,19 +33,23 @@ public class Solution {
 
     public static StringBuilder getLine(String... words) {
         StringBuilder sb = new StringBuilder();
-
-        if (words == null || words.length == 0) return sb;
-        else if (words.length == 1) return sb.append(words[0]);
-
         List<String> strArr = new ArrayList<>(Arrays.asList(words));
+
+        if (strArr == null || strArr.size() == 0) return sb;
+        else if (strArr.size() == 1) return sb.append(words[0]);
+
         int count = 0;
+        Map<String, String> strSet = new HashMap<>();
+
+        for(String s : strArr)
+            strSet.put(s, String.valueOf(s.charAt(0)).toLowerCase());
 
         while (count != strArr.size() - 1) {
             Collections.shuffle(strArr);
             count = 0;
 
             for (int i = 0; i < strArr.size() - 1; i++) {
-                if (strArr.get(i).endsWith(String.valueOf(strArr.get(i + 1).charAt(0)).toLowerCase())) {
+                if (strArr.get(i).endsWith(strSet.get(strArr.get(i + 1)))) {
                     count++;
                 } else break;
             }
