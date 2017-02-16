@@ -8,6 +8,7 @@ import java.util.Map;
 */
 public class Solution {
     public static boolean checkTelNumber(String telNumber) {
+        if(telNumber == null) return false;
         return telNumber.matches("^\\+[\\d]{2}((\\([\\d]{3}\\))|([\\d]{3}))[\\d]{3}-?[\\d]{2}-?[\\d]{2}$") ||
                 telNumber.matches("^((\\([\\d]{3}\\))|([\\d]{3}))[\\d]{3}-?[\\d]{2}-?[\\d]{2}$");
     }
@@ -55,6 +56,7 @@ public class Solution {
         map.put("+38051202(345)7", true);
         map.put("+313450--531202", false);
         map.put("", false);
+        map.put(null, false);
         map.put("(050)34(125)6-7", false);
         map.put("+38)050(1234567", false);
         map.put("+3+8(050)1234567", false);
@@ -139,7 +141,6 @@ public class Solution {
         map.put("+380501234(567)", false);
         map.put("+38050123425-1", true);
         map.put("+380501234251", true);
-
 
         for (Map.Entry pair : map.entrySet()) {
             boolean result = checkTelNumber(pair.getKey() == null ? null : pair.getKey().toString());
