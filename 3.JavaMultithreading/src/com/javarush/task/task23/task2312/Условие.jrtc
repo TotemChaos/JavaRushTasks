@@ -1,0 +1,75 @@
+<div class="wdghtml" taskKey="com.javarush.task.task23.task2312.big14">
+<h3>Змейка(14)</h3>
+<p>Теперь поработаем над методом <mark>print()</mark>.</p>
+<p><strong>Надо:</strong><br />
+а) вывести на экран прямоугольник из точек размером <mark class="user">width</mark> x <mark class="user">height</mark>.<br />
+б) тело змеи отметить символом &#171;<em><strong>x</strong></em>&#171;-<strong>английское</strong><br />
+в) голову змеи нарисовать символом &#171;<em><strong>X</strong></em>&#171;-<strong>английское</strong>.</p>
+<p><strong>Подсказка:</strong><br />
+а) удобно сначала создать матрицу типа <span class="text-corporate"><strong>int[][]</strong></span> с размером (<mark class="user">height</mark> x <mark class="user">width</mark>)<br />
+б) затем пройтись по всем объектам и отрисовать их в матрицу.<br />
+Например, тело змеи &#8212; <span class="text-user"><strong>1</strong></span>, голова змеи &#8212; <strong><span class="text-user">2</span></strong>, мышь &#8212; <strong><span class="text-user">3</span></strong>.</p>
+
+<hr>
+<h3>Змейка(13)</h3>
+<p>Предлагаю тебе в этот раз написать специальный метод <mark>sleep()</mark>, который будет делать паузу в зависимости от длины змеи (<em>количества элементов в</em> <strong><span class="text-corporate">sections</span></strong>).<br />
+Придумай какой-нибудь хитрый алгоритм. Чтобы на первом уровне пауза была <span class="text-user"><strong>500</strong></span> <strong>миллисекунд</strong>,<br />
+а к <strong><span class="text-user">10</span></strong> <strong>уровню</strong> постепенно уменьшилась до <span class="text-user"><strong>300</strong></span>. А к <strong><span class="text-user">15</span></strong> до <span class="text-user"><strong>200</strong></span>. И дальше оставалась постоянной.</p>
+
+<hr>
+<h3>Змейка(12)</h3>
+<p>Змея у нас есть, пусть и мышь будет.</p>
+<p><strong>Добавить в метод main:</strong><br />
+a) вызов метода <mark>createMouse()</mark>.<br />
+б) вызов метода <mark>run()</mark>.<br />
+Без него ничего работать не будет. В нем вся основная логика.<br />
+Неплохо получилось, но я все-таки внесу пару правок.<br />
+Кстати, как насчет написать метод <mark>sleep</mark>?<br />
+Ты уже понял из предыдущих задач, что в методе <mark>run</mark> нужна пауза.<br />
+Но насколько я помню, скорость в змейке должна расти при росте ее длины.<br />
+Значит чем длиннее змея, тем выше скорость и меньше пауза.</p>
+
+<hr>
+<h3>Змейка(11)</h3>
+<p>Теперь логика управления мышью.</p>
+<p>С мышью у нас будут происходить две вещи.</p>
+<p>Первая - змея съедает мышь.</p>
+<p>Вторая - появляется новая мышь в случайной точке комнаты.</p>
+<p></p>
+<p>Надо написать и реализовать метод createMouse() в классе Room.</p>
+<p>В этом методе мы просто должны создавать новую мышь со случайными координатами в комнате.</p>
+<p>Как получить случайные координаты?</p>
+<p>Это ты уже должен был знать. На всякий случай даю подсказку:</p>
+<p>int x = (int) (Math.random() * width);</p>
+<p></p>
+<p>Еще понадобится метод - eatMouse(), на случай, если мышь все-таки кто-то съест :)</p>
+<p>Пока сложной логики в этом методе не будет - просто будем вызывать метод createMouse и все.</p>
+
+<hr>
+<h3>Змейка(10)</h3>
+<p>Займемся методом <mark class="user">main</mark>.</p>
+<p>Для начала надо создать в классе <span class="text-corporate"><strong>Room</strong></span> статическое поле <mark class="user">game</mark> типа <strong><span class="text-corporate">Room</span></strong>. Доступ к переменной должен быть из всех классов.</p>
+<p><strong>Затем в методе </strong><mark>main</mark><strong>:</strong><br />
+а) Создать змею &#8212; <span class="text-green">объект</span> типа <strong><span class="text-corporate">Snake</span></strong>.<br />
+б) Создать комнату &#8212; <span class="text-green">объект</span> типа <span class="text-corporate"><strong>Room</strong></span> и передать в него ширину, высоту и змею.<br />
+в) Установить змее <mark class="user">direction</mark> равным <mark>SnakeDirection</mark>.<mark class="user">DOWN</mark></p>
+<p>Чего еще не хватает? Собственно метода, в котором будет идти вся игровая логика.<br />
+<strong>И еще нужен метод, который бы отрисовывал все это на экране:</strong><br />
+а) создать метод <mark>void run()</mark><br />
+б) создать метод <mark>void print()</mark></p>
+
+<hr>
+<h3>Змейка(9)</h3>
+<p>Еще остался самый главный класс &#8212; <span class="text-corporate"><strong>Room</strong></span>.<br />
+Что нам нужно для его описания?<br />
+Размеры комнаты (<mark class="user">width</mark> и <mark class="user"><strong>height</strong></mark>) &#8212; раз.<br />
+<strong>Змея</strong> &#8212; <strong>два</strong><br />
+<strong>Мышь</strong> &#8212; <strong>три</strong>.</p>
+<p><strong>Надо:</strong><br />
+а) создать в классе <span class="text-corporate"><strong>Room</strong></span> переменные <mark class="user">width</mark> и <mark class="user">height</mark> типа <span class="text-corporate">int</span>.<br />
+б) создать в классе <span class="text-corporate"><strong>Room</strong></span> переменную <mark class="user">snake</mark> типа <strong><span class="text-corporate">Snake</span></strong>.<br />
+в) создать в классе <span class="text-corporate"><strong>Room</strong></span> переменную <mark class="user">mouse</mark> типа <span class="text-corporate"><strong>Snake</strong></span>. Шучу. Типа <strong><span class="text-corporate">Mouse</span></strong>, конечно же :).<br />
+г) создать для них всех <strong>геттеры</strong> и <strong>сеттеры</strong>.<br />
+д) создать конструктор. Конструктор должен принимать три параметра: <mark class="user">width</mark>, <mark class="user">height</mark> и &#8230; <mark class="user">snake</mark>!</p>
+
+</div>
