@@ -13,8 +13,10 @@ public class Solution {
         Solution solution1 = new Solution();
         Solution solution2 = new Solution();
 
-        solution1.innerClasses = new InnerClass[2]{new Solution().new InnerClass(), new Solution().new InnerClass()};
-        solution2.innerClasses = new InnerClass[2];
+        solution1.innerClasses[0] = new Solution().new InnerClass();
+        solution1.innerClasses[1] = new Solution().new InnerClass();
+        solution2.innerClasses[0] = new Solution().new InnerClass();
+        solution2.innerClasses[1] = new Solution().new InnerClass();
 
         Solution[] sol = new Solution[]{solution1, solution2};
 
