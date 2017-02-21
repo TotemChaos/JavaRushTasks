@@ -1,0 +1,7 @@
+<div class="wdghtml" taskKey="com.javarush.task.task23.task2304">
+<h3>Inner 3</h3>
+<p>Внутри класса <span class="text-corporate"><strong>Solution</strong></span>:<br />
+1) реализуйте <strong><span class="text-corporate">private class TaskDataProvider</span></strong> используя <strong>Task</strong> и <strong>DbMock</strong>, цель которого &#8212; обновить поле <mark class="green">tasks</mark>.<br />
+2) реализуйте <span class="text-corporate"><strong>private class NameDataProvider</strong></span> используя <strong>String</strong> и <strong>DbMock</strong>, цель которого &#8212; обновить поле <mark class="green">names</mark>.</p>
+
+</div>
