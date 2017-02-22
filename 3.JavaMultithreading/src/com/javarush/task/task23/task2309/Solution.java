@@ -12,6 +12,9 @@ public class Solution {
         Solution solution = new Solution();
         print(solution.getUsers());
         print(solution.getLocations());
+        print(solution.getServer());
+        print(solution.getSubject());
+        print(solution.getSubscription());
     }
 
     public static void print(List list) {
@@ -20,5 +23,51 @@ public class Solution {
             NamedItem item = (NamedItem) obj;
             System.out.println(String.format(format, item.getId(), item.getName(), item.getDescription()));
         }
+    }
+
+    public List<User> getUsers()    {
+        return new AbstractDbSelectExecutor(){
+
+            @Override
+            public String getQuery() {
+                return null;
+            }
+        }.execute();
+    }
+
+    public List<Location> getLocations()    {
+        return new AbstractDbSelectExecutor(){
+            @Override
+            public String getQuery() {
+                return null;
+            }
+        }.execute();
+    }
+
+    public List<Server> getServer()    {
+        return new AbstractDbSelectExecutor(){
+            @Override
+            public String getQuery() {
+                return null;
+            }
+        };
+    }
+
+    public List<Subject> getSubject() {
+        return new AbstractDbSelectExecutor() {
+            @Override
+            public String getQuery() {
+                return null;
+            }
+        };
+    }
+
+    public List<Subscription> getSubscription() {
+        return new AbstractDbSelectExecutor() {
+            @Override
+            public String getQuery() {
+                return null;
+            }
+        };
     }
 }
