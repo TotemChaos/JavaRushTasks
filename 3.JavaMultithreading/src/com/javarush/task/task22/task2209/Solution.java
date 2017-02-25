@@ -11,52 +11,52 @@ import java.util.*;
 */
 public class Solution {
     public static void main(String[] args) throws IOException {
-        Long t0 = System.currentTimeMillis();
+        //Long t0 = System.currentTimeMillis();
         try (
                 BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-                BufferedReader readFile = new BufferedReader(new FileReader("c:\\data.txt"))
+                BufferedReader readFile = new BufferedReader(new FileReader(reader.readLine()))
         ) {
             StringBuilder sb = new StringBuilder();
 
             while (readFile.ready())
-                    sb.append(readFile.readLine() + " ");
+                sb.append(readFile.readLine() + " ");
 
-            String[] words = sb.toString().split("\\s+");
+            String[] words = sb.toString().split("\\s");
 
             StringBuilder result = getLine(words);
             System.out.println(result.toString().trim());
         }
-        Long t1 = System.currentTimeMillis();
-        System.out.println("Time: " + (t1 - t0) / 1000d + " sec");
-        System.out.println("Memory: " + (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (1024 * 1024) + " mb");
+        //Long t1 = System.currentTimeMillis();
+        //System.out.println("Time: " + (t1 - t0) / 1000d + " sec");
+        //System.out.println("Memory: " + (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (1024 * 1024) + " mb");
     }
 
     public static StringBuilder getLine(String... words) {
         StringBuilder sb = new StringBuilder();
         List<String> strArr = new ArrayList<>(Arrays.asList(words));
 
-        if (strArr == null || strArr.size() == 0) return sb;
-        else if (strArr.size() == 1) return sb.append(words[0]);
+        if (words.length == 0) return new StringBuilder();
 
-        int count = 0;
-        Map<String, String> strSet = new HashMap<>();
+        sb.append(strArr.get(0));
+        strArr.remove(0);
 
-        for(String s : strArr)
-            strSet.put(s, String.valueOf(s.charAt(0)).toLowerCase());
+        while (strArr.size() > 0)   {
+            for (int i = 0; i < strArr.size(); i++) {
+                String a = strArr.get(i).toLowerCase();
+                String b = sb.toString().toLowerCase();
 
-        while (count != strArr.size() - 1) {
-            Collections.shuffle(strArr);
-            count = 0;
+                if (a.charAt(0) == b.charAt(sb.length() - 1))   {
+                    sb.append(" " + strArr.get(i));
+                    strArr.remove(i);
+                    continue;
+                }
 
-            for (int i = 0; i < strArr.size() - 1; i++) {
-                if (strArr.get(i).endsWith(strSet.get(strArr.get(i + 1)))) {
-                    count++;
-                } else break;
+                if (b.charAt(0) == a.charAt(a.length() - 1))    {
+                    sb.insert(0, strArr.get(i) + " ");
+                    strArr.remove(i);
+                }
             }
         }
-
-        for (String s : strArr)
-            sb.append(s + " ");
 
         return sb;
     }
