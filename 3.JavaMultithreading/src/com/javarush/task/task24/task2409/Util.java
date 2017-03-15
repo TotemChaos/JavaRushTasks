@@ -18,15 +18,64 @@ public class Util {
 
         //add your code here
 
-        abstract class AbstractJeans    {
-            abstract String getTM();
-
+        abstract class AbstractJeans implements Jeans   {
+            public abstract String getTM();
         }
-        class Levis {
 
+        class Levis extends AbstractJeans {
+
+            @Override
+            public int getId() {
+                return 0;
+            }
+
+            @Override
+            public double getPrice() {
+                return 0;
+            }
+
+            @Override
+            public String getTM() {
+                return null;
+            }
+
+            @Override
+            public int getLength() {
+                return 0;
+            }
+
+            @Override
+            public int getSize() {
+                return 0;
+            }
         }
-        class Denim {
 
+        class Denim extends AbstractJeans  {
+
+            @Override
+            public int getId() {
+                return 0;
+            }
+
+            @Override
+            public double getPrice() {
+                return 0;
+            }
+
+            @Override
+            public String getTM() {
+                return null;
+            }
+
+            @Override
+            public int getLength() {
+                return 0;
+            }
+
+            @Override
+            public int getSize() {
+                return 0;
+            }
         }
 
         List<Jeans> allJeans = new LinkedList<>();
