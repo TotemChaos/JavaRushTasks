@@ -43,7 +43,27 @@ public class Solution {
     public static void sort(List<Stock> list) {
         Collections.sort(list, new Comparator<Stock>() {
             public int compare(Stock stock1, Stock stock2) {
-                return 0;
+                int compareString = ((String)stock1.get("name")).compareTo((String)stock2.get("name"));
+
+                if(compareString != 0)  {
+                    return compareString;
+                }else {
+                    int compareDate = ((Date) stock2.get("date")).compareTo((Date) stock1.get("date"));
+
+                    if(compareDate != 0)    {
+                        return compareDate;
+                    }else {
+                        Double profit1 = stock1.containsKey("change") ? (double) stock1.get("change") :
+                                (double) stock1.get("last") - (double) stock1.get("open");
+
+                        Double profit2 = stock2.containsKey("change") ? (double) stock2.get("change") :
+                                (double) stock2.get("last") - (double) stock2.get("open");
+
+                        int compareProfit = profit2.compareTo(profit1);
+
+                        return compareProfit;
+                    }
+                }
             }
         });
     }
