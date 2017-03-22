@@ -1,14 +1,13 @@
 package com.javarush.task.task23.task2312;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Snake {
-    private List<SnakeSection> sections;
+    private ArrayList<SnakeSection> sections;
     private boolean isAlive;
     private SnakeDirection direction;
 
-    public List<SnakeSection> getSections() {
+    public ArrayList<SnakeSection> getSections() {
         return sections;
     }
 
@@ -54,8 +53,8 @@ public class Snake {
     }
 
     public void checkBorders(SnakeSection head) {
-        if(head.getX() > Room.game.getWidth() || head.getX() < 0
-                || head.getY() > Room.game.getHeight()|| head.getY() < 0)
+        if(head.getX() >= Room.game.getWidth() || head.getX() < 0
+                || head.getY() >= Room.game.getHeight()|| head.getY() < 0)
             isAlive = false;
     }
 
